@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: white;
+    font-family: Arial;
+}
+footer {
+    background-color: #515151
+}
+button {
+    background-color: #1a1103;
+    color: white;
+    margin-left: 129px;
+    margin-top: 59px;
+    margin-bottom: 141px;
+    padding: 12px;
+    Width: 206px;
+    Height: 40px;
+}
+section.media {
+    margin-left: 122px;
+    padding-bottom: 40px;
+}
