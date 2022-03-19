@@ -285,6 +285,10 @@ footer {
     margin-bottom: 110px;
 }
 
+#footerLogo {
+    color: white;
+}
+
 
 p.copyRight {
     margin-top: 130px;
