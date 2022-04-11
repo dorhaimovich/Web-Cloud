@@ -5,41 +5,44 @@
     <meta charset="utf-8">
     <title>Dor Haimovich</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <body>
-    <div id="wrapper">
+    <div id="wrapper3">
         <div id="UpperLayer-Layout3">
             <header class="header-layout3">
                 <img src="images/logo.png" alt="Logo" title="Logo" id="logo">
+                <div>
+                    <img src="images/plus.png" alt="plus" title="plus" id="plus" onclick="numberRollet()">
+                </div>
                 <nav>
-                    <ul class="ul-layout3">
-                        <a href="index.html" class="a-layout1">
-                            <li>Layout 1</li>
-                        </a>
-                        <a href="index2.html" class="a-layout1">
-                            <li>Layout 2</li>
-                        </a>
-                        <a href="index3.html" class="a-layout1" id="selected">
-                            <li>Layout 3</li>
-                        </a>
+                    <ul>
+                        <li><a href="index.html">Layout 1</a></li>
+                        <li><a href="index2.html">Layout 2</a></li>
+                        <li id="selected"><a href="index3.html">Layout 3</a></li>
                     </ul>
                 </nav>
             </header>
 
-            <aside class="aside-layout3">
-                <div class="square" id="square1"></div>
-                <div class="square" id="square2"></div>
-                <div class="square" id="square3"></div>
-                <div class="square" id="square4"></div>
+            <aside id="aside-layout3">
+                <div id="square1"></div>
+                <div id="square2"></div>
+                <div id="square3"></div>
+                <div id="square4"></div>
             </aside>
         </div>
 
-        <main class="main-layout3"></main>
+        <main id="main-layout3"></main>
 
         <footer></footer>
     </div>
+    <script>
+        window.onload = () => {
+            addSquares();
+        }
+    </script>
 </body>
 
 </html>
