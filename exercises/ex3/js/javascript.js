@@ -32,6 +32,7 @@ numberRollet=() => {
         let x = parseInt((myDiv.childNodes[0].innerHTML)) *2;
         if(x > 1000)
         {
+            document.getElementsByTagName("header")[0].getElementsByTagName("div")[0].firstElementChild.hidden = true;
             myDiv.childNodes[0].innerHTML = 1000;
             myDiv.style.backgroundColor = 'gold';
         }
@@ -48,6 +49,7 @@ reset=() => {
     upperDiv.style.opacity = '50%';
     upperDiv.removeChild(upperDiv.lastElementChild);
     myDiv.removeChild(myDiv.lastElementChild);
+    document.getElementsByTagName("header")[0].getElementsByTagName("div")[0].firstElementChild.hidden = false;
 
 }
 
