@@ -16,38 +16,42 @@ addSquares=() => {
 numberRollet=() => {
     let myDiv = document.getElementById("main-layout3").getElementsByTagName("div")[4];
     if (myDiv.childNodes.length == 0) {
-        const num = (Math.round(Math.random() * 100) % 100) + 1;
+        const num = 50;
         let pElement = document.createElement("p");
-        let button = document.createElement("button");
-        let upperDiv = document.getElementById("main-layout3").getElementsByTagName("div")[2];
         pElement.innerHTML = num;
+        pElement.style.fontSize = '70px';
         myDiv.appendChild(pElement);
-        
-        button.innerHTML = 'Reset';
-        button.setAttribute('onclick', 'reset()');
-        upperDiv.style.opacity = '90%';
-        upperDiv.appendChild(button);
     }
     else {
-        let x = parseInt((myDiv.childNodes[0].innerHTML)) *2;
-        if(x > 1000)
+        let num = parseInt(myDiv.childNodes[0].innerHTML);
+        let checker = parseFloat(myDiv.childNodes[0].innerHTML);
+        let font = parseInt(myDiv.childNodes[0].style.fontSize) + 10;
+        if(checker > 99)
         {
+            let resetButton = document.getElementsByClassName("header-layout3")[0].getElementsByTagName("div")[0];
+            let button = document.createElement("button");
             document.getElementsByTagName("header")[0].getElementsByTagName("div")[0].firstElementChild.hidden = true;
-            myDiv.childNodes[0].innerHTML = 1000;
+            myDiv.childNodes[0].innerHTML = 100;
+            myDiv.childNodes[0].style.fontSize = font + 10 + 'px';
             myDiv.style.backgroundColor = 'gold';
+            button.innerHTML = 'Reset';
+            button.setAttribute('onclick', 'reset()');
+            resetButton.appendChild(button);
         }
         else
-            myDiv.childNodes[0].innerHTML = x;
+        {
+            num += (100 - num)/2;
+            myDiv.childNodes[0].innerHTML = num;
+            myDiv.childNodes[0].style.fontSize = font + 'px';
+        }  
     }   
 }
 
 reset=() => {
     let myDiv = document.getElementById("main-layout3").getElementsByTagName("div")[4];
-    let upperDiv = document.getElementById("main-layout3").getElementsByTagName("div")[2];
-    console.log(myDiv);
+    let resetButton = document.getElementsByClassName("header-layout3")[0].getElementsByTagName("div")[0];
     myDiv.style.backgroundColor = 'white';
-    upperDiv.style.opacity = '50%';
-    upperDiv.removeChild(upperDiv.lastElementChild);
+    resetButton.removeChild(resetButton.lastElementChild);
     myDiv.removeChild(myDiv.lastElementChild);
     document.getElementsByTagName("header")[0].getElementsByTagName("div")[0].firstElementChild.hidden = false;
 
